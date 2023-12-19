@@ -1,19 +1,20 @@
 "use strict ";
 
-/* ----------------------------------------
+"use strict";
 
-          NODEJS
+/* --------------------------------------------
 
----------------------------------------- */
+        NODEJS
 
-const htpp = require("node:http"); // builtin: https://nodejs.org/api/http.html
+-------------------------------------------- */
+const http = require("node:http"); // builtin: https://nodejs.org/api/http.html
+/* -------------------------------------------- */
 
-//http.createServer((req, res) => { ... }
-
-htpp.createServer((request, response) => {
-  response.end("Wellcome to NodeJS Server");
+// http.createServer((req, res) => { ... }
+const app = http.createServer((request, response) => {
+  response.end("<h1> Welcome to NodeJS Server </h1>");
 });
 
-// 127.0.0.1:8000
-
+// http://127.0.0.1:8000
+// http://localhost:8000
 app.listen(8000, () => console.log("Server Runned: http://127.0.0.1:8000"));
