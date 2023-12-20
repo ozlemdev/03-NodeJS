@@ -79,12 +79,27 @@ http
   })
   .listen(8000, () => console.log("http://127.0.0.1:8000"));
 /* -------------------------------------------- */
-//ENV
-console.log(process.env); // işi yapan eylem:process- env:içinde bulunduğum alan
+// ENV
+
+// $ ENV_NAME=ENV_VALUE node index.js
+
+// get ENV_VARS from .env file:
+require("dotenv").config();
+//console.log(process.env.PORT);
+
+const PORT = process.env.PORT ?? 8000;
+
+//console.log(process.env.ENV_NAME); // işi yapan eylem:process- env:içinde bulunduğum alan
+
 http
   .createServer((req, res) => {
     res.end("<h1> Welcome to NodeJS Server </h1>");
   })
-  .listen(8000, () => console.log("http://127.0.0.1:8000"));
+  .listen(PORT, () => console.log("http://127.0.0.1:$(PORT "));
+/* -------------------------------------------- *
+  console.log("NODE_ENV:", process.env.NODE_ENV); 
+console.log("ENV_HOST:", process.env.ENV_HOST + ':' + process.env.ENV_PORT); 
+console.log("ENV_EXAMPLE_STR:", process.env.ENV_EXAMPLE_STR); 
+console.log("ENV_EXAMPLE_TXT:", process.env.ENV_EXAMPLE_TXT.split(' ')); 
 
 /* -------------------------------------------- */
