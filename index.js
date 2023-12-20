@@ -35,7 +35,7 @@ const app = http
   })
   .listen(8000, () => console.log("Server Runned: http://127.0.0.1:8000"));
 
-/* -------------------------------------------- */
+/* -------------------------------------------- *
 
 http
   .createServer((req, res) => {
@@ -78,4 +78,13 @@ http
     }
   })
   .listen(8000, () => console.log("http://127.0.0.1:8000"));
+/* -------------------------------------------- */
+//ENV
+console.log(process.env); // işi yapan eylem:process- env:içinde bulunduğum alan
+http
+  .createServer((req, res) => {
+    res.end("<h1> Welcome to NodeJS Server </h1>");
+  })
+  .listen(8000, () => console.log("http://127.0.0.1:8000"));
+
 /* -------------------------------------------- */
