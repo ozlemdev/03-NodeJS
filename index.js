@@ -18,7 +18,7 @@ const app = http.createServer((request, response) => {
 // http://127.0.0.1:8000
 // http://localhost:8000
 app.listen(8000, () => console.log("Server Runned: http://127.0.0.1:8000"));
-/* -------------------------------------------- */
+/* -------------------------------------------- 
 
 const app = http
   .createServer((req, res) => {
@@ -35,4 +35,24 @@ const app = http
   })
   .listen(8000, () => console.log("Server Runned: http://127.0.0.1:8000"));
 
+/* -------------------------------------------- */
+
+http
+  .createServer((req, res) => {
+    if (req.url == "/") {
+      res.statusCode = 404; // Default: 200
+      res.statusMessage = "Not Found"; // Default: OK
+
+      res.setHeader("Content-Type", "text/html");
+      res.setHeader("anather-header", "another-value");
+
+      res.write("* Satır1");
+      res.write("* Satır2");
+      res.write("* Satır3");
+      res.end();
+    } else {
+      res.end("Server is running");
+    }
+  })
+  .listen(8000, () => console.log("http://127.0.0.1:8000"));
 /* -------------------------------------------- */
