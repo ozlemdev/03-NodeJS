@@ -21,5 +21,18 @@ app.listen(8000, () => console.log("Server Runned: http://127.0.0.1:8000"));
 /* -------------------------------------------- */
 
 const app = http
-  .createServer((req, res) => {})
+  .createServer((req, res) => {
+    // console.log( req )
+    // console.log( res )
+    console.log(req.url);
+    if (req.url == "/") {
+      res.end("<h1>Main Page");
+    } else if (req.url == "/second") {
+      res.end("<h1>Second Page");
+    } else {
+      res.end("<h1>Server is running");
+    }
+  })
   .listen(8000, () => console.log("Server Runned: http://127.0.0.1:8000"));
+
+/* -------------------------------------------- */
